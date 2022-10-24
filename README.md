@@ -8,9 +8,13 @@
 
 ```
 错误代码4214
-第一种情况：3.1版本后需要替换Genshin Impact Game\YuanShen_Data\Native这个路径下的UserAssembly.dll
+第一种情况：
+3.1版本后需要替换
+`Genshin Impact Game\YuanShen_Data\Native`
+这个路径下的UserAssembly.dll
 这里不教怎么替换（替换都不会，你不适合玩电脑）。
-第二种情况：我非常坚信，肯定，100%替换了补丁(也就是UserAssembly.dll)，那么请检查你的代理，不行就重启电脑，换一个代理等等。
+第二种情况：我非常坚信，肯定，100%替换了补丁(也就是UserAssembly.dll)，
+那么请检查你的代理，不行就重启电脑，换一个代理等等。
 
 总结：
 没有替换补丁(也就是UserAssembly.dll)之前
