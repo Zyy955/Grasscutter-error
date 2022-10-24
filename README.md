@@ -4,8 +4,22 @@
 
 * 以下`UserAssembly.dll`简称`UA`；`global-metadata.dat`简称`meta`。
 
-* #### 1：元文件未进行修补
+* #### 1：元文件(补丁)未进行修补
 
+```
+错误代码4214
+第一种情况：3.1版本后需要替换Genshin Impact Game\YuanShen_Data\Native这个路径下的UserAssembly.dll，这里不教怎么替换（替换都不会，你不适合玩电脑）。
+第二种情况：我非常坚信，肯定，100%替换了补丁(也就是UserAssembly.dll)，那么请检查你的代理，不行就重启电脑，换一个代理等等。
+
+总结：
+没有替换补丁(也就是UserAssembly.dll)之前，如果你开启代理，进入客户端界面会显示4214.
+替换补丁(也就是UserAssembly.dll)之后，如果你未开启代理，直接进入客户端，同样显示4214.
+二者缺一不可。
+
+还有一种情况，我替换了补丁为什么打开客户端没有反应，因为你踏马拿着C2驾照开C1的手动挡，3.1版本的客户端给你打一个7.0的补丁上去，你觉得行不行？
+
+在不懂卸载吧。拜拜~！
+```
 ```
 2.6-3.0版本，需要修补的文件为"meta"
 国服修补路径：Yuanshen_Data\Managed\Metadata\global-metadata.dat
@@ -30,64 +44,56 @@
 * #### 2：修补元数据后，代理劫持失败。
 * 如果你修补元数据文件之后，仍然报4214，请检查你的代理，代理问题请往下看。
 
-* #### Exception has been thrown by the target of aninvocation
-* 国际服客户端使用国服补丁会出现此错误，解决方法请看`4214`
-![Exception has been thrown by the target of aninvocation](https://github.com/Yuer-QAQ/Grasscutter-error/blob/main/Photo/4214-3.png)
+## 元数据(补丁)更多错误
+
+* 1：Exception has been thrown by the target of aninvocation
+![国际服客户端使用国服补丁会出现此错误，解决方法为下载正确的补丁在进行文件替换,可借鉴"4214"。](https://github.com/Yuer-QAQ/Grasscutter-error/blob/main/Photo/4214-3.png)
+* 2.Failed to load il2cpp
+![本人暂未碰到此错误，据群友所说的是使用其他版本的补丁造成此错误，解决方法为下载正确的补丁在进行文件替换，可借鉴"4214"。](https://github.com/Yuer-QAQ/Grasscutter-error/blob/main/Photo/4214-4.png)
 
 * ## 4206 错误
-此类错误大多数情况为代理未正确配置，可尝试
-
-* ### 仔细检查代理端 / 服务端所有配置
-
-* ### 重启代理端 / 重启服务器
-
-* ### 开启代理后运行游戏，检查服务端和代理的日志，如果代理中
-
-没有`mihoyo.com`/`hoyoverse.com`子域的请求或者没刷新任何日志，则为客户端代理配置错误
-
-有`mihoyo.com`/`hoyoverse.com`子域的请求，但报`TLS handshake failed`，则为客户端未安装对应服务端的证书，或服务端不能连接到相应域名
-
-有`mihoyo.com`/`hoyoverse.com`子域的请求，但报拒绝连接等错误，可能是服务端网络问题导致无法连接米哈游服务器
-
-如果代理没有报错，则应为服务端问题，检查服务端配置或者更新服务端
-
-* ### 如仍无法解决，可尝试以下操作：
-
-关闭代理正常启动游戏检查更新完后再次开代理进入游戏
-
-修改`config.json`中`server.http.accessAddress`为`dispatchcnglobal.yuanshen.com`
-
-另外，据经验此问题可能是服务器问题，尝试更换
-
-* ## 登陆账号提示网络错误 / 网络超时
-确认配置无误可尝试修改`config.json`中`server.http.accessAddress`为`dispatchcnglobal.yuanshen.com`然后进一遍游戏，如果能进去，就可以将此配置还原
-
+* 此错误大概率发生在服务端，服务端没有正确配置`config.json`里面的公网/局域网IP导致。
+解决方法：修改`config.json`的`accessAddress`修改为公网/局域网IP。
+```
+"server": {
+    "debugWhitelist": [],
+    "debugBlacklist": [],
+    "runMode": "HYBRID",
+    "logCommands": true,
+    "http": {
+      "bindAddress": "0.0.0.0",
+      "bindPort": 443,
+      "accessAddress": "127.0.0.1",
+//修改"127.0.0.1"为你的公网IP
+```
+```
+    "game": {
+      "bindAddress": "0.0.0.0",
+      "bindPort": 22102,
+      "accessAddress": "127.0.0.1",
+//修改"127.0.0.1"为你的公网IP
+```
 * ## 点击登录转圈然后没反应
-如果点击后服务端日志有成功登录的提示，关掉登录窗口即可进入游戏 (手机版特供 bug)
-如无，请检查服务端代理是否正确运行，是否假死 (尝试重启)
-
+* 代理失败或者代理没开
 * ## 502 / 4301 / 无法连接服务器
-绝对是你没正确配置，自行检查
-
-* ## 登陆后检查更新失败
-如果代理日志中有`mihoyo.com`/`hoyoverse.com`子域的请求，但报拒绝连接等错误，可能是服务端网络问题导致无法连接米哈游服务器
+* 代理失败或者代理没开
 
 * ## 开启代理后还是登录了官服
-有其他代理冲突；服务端没有正确运行
+* 代理失败或者代理没开
 
 * ## 4201
 检查是否正确安装并信任证书
 
 * ## -9203
-一般为代理问题，已知 iOS 使用小火箭会存在此问题
+一般为代理问题，目前`iOS`使用小火箭会存在此问题
 
 * ## 卡检查更新
 尝试正常进游戏一次后再连代理进；检查服务端网络问题，如确实没问题请尝试重启代理端 / 更换代理端口 / 重启服务器
 
 * ## 进门后连接超时
-放通 UDP 22102 。。。或者你眼瞎只改了一个 ip。。。
+* 服务器开放`UDP 22102`
 
 * ## 进门白屏
-你乱改数据库改出问题了，或者服务端系统有什么大病不兼容 Java
+* 啥也别说，换个账号解决一切问题。
 
 先摆了，明天再写，打王者去了。
