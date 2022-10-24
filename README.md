@@ -25,14 +25,14 @@
 打开我的游戏客户端，跳转到`Yuanshen_Data\Native`路径下
 把此路径下的`UserAssembly.dll`进行重命名`UserAssembly-官服.dll`(防止覆盖，玩官服需要恢复)
 把下载的`UserAssembly.dll`复制到当前路径，即可完成元文件修补。
-![修补完成且备份元数据布局](https://github.com/Yuer-QAQ/Grasscutter-error/tree/main/Photo/4214-2.png)
+![修补完成且备份元数据布局](https://github.com/Yuer-QAQ/Grasscutter-error/blob/main/Photo/4214-2.png)
 
 * #### 2：修补元数据后，代理劫持失败。
 * 如果你修补元数据文件之后，仍然报4214，请检查你的代理，代理问题请往下看。
 
 * #### Exception has been thrown by the target of aninvocation
 * 国际服客户端使用国服补丁会出现此错误，解决方法请看`4214`
-![Exception has been thrown by the target of aninvocation](https://github.com/Yuer-QAQ/Grasscutter-error/tree/main/Photo/4214-3.png)
+![Exception has been thrown by the target of aninvocation](https://github.com/Yuer-QAQ/Grasscutter-error/blob/main/Photo/4214-3.png)
 
 * ## 4206 错误
 此类错误大多数情况为代理未正确配置，可尝试
