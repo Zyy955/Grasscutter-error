@@ -2,27 +2,37 @@
  Grasscutter错误代码
 * ## 4214-错误代码
 
-* 最常见的错误代码，此错误代码有两种情况引起。
+* 以下`UserAssembly.dll`简称`UA`；`global-metadata.dat`简称`meta`。
 
-* ### 第一种：“UserAssembly.dll”未进行修补。
-需要注意的是，在3.1版本之前，用户需要修改的是“global-metadata.dat”。
-而3.1版本开始，已经改成修改“UserAssembly.dll”，俗称“UA”。
-* 解决方法为：按照以下路径，替换“UserAssembly.dll”。
+* #### 1：元文件未进行修补
+
 ```
-国服替换文件路径为：Yuanshen_Data\Native\UserAssembly.dll
-国际服替换文件路径为：GenshinImpact_Data\Native\UserAssembly.dll
-历史版本替换文件路径为：GenshinImpact_Data\Managed\Metadata\global-metadata.dat
+2.6-3.0版本，需要修补的文件为"meta"
+国服修补路径：Yuanshen_Data\Managed\Metadata\global-metadata.dat
+国际服修补路径：GenshinImpact_Data\Managed\Metadata\global-metadata.dat
 ```
-* 需要注意的是，每一个服务器的每一个版本都对应着不同的UserAssembly.dll。请不要混合使用补丁，如果不懂怎么区分客户端是什么版本，请往下看。
-* 更换文件之前推荐重命名原文件(UserAssembly.dll)，进行备份。
-* ### 第二种：修补完成UA后，代理劫持失败。
-* `因为代理劫持失败有时候不会报4214，会报网络繁忙（502），所以这里通用一个解决方法。`
-* 代理失败的原因真的非常非常多，请容我慢慢道来。(请使用MHY代理转向)
-1. 填写错误IP端口，正确的填写方式是
+```
+3.1版本开始，需要修补的文件为`UA`。
+国服修补文件路径为：Yuanshen_Data\Native\UserAssembly.dll
+国际服修补文件路径为：GenshinImpact_Data\Native\UserAssembly.dll
+```
+* 发生4214正确的做法是，先确定自己的客户端版本，从网上下载修补完成的文件进行替换，替换完成挂代理进入游戏即可。
 
+* 例：
+我的客户端版本是`国服3.1`
+那我从[rainkavik网盘](https://cloud.rainkavik.com/s/zLEHx?path=%2F%E5%AE%A2%E6%88%B7%E7%AB%AF)下载`国服3.1补丁`
+你可以从任意地方下载修补完成的补丁，这里只是推荐。
+打开我的游戏客户端，跳转到`Yuanshen_Data\Native`路径下
+把此路径下的`UserAssembly.dll`进行重命名`UserAssembly-官服.dll`(防止覆盖，玩官服需要恢复)
+把下载的`UserAssembly.dll`复制到当前路径，即可完成元文件修补。
+![修补完成且备份元数据布局](https://github.com/Yuer-QAQ/Grasscutter-error/tree/main/Photo/4214-2.png)
 
+* #### 2：修补元数据后，代理劫持失败。
+* 如果你修补元数据文件之后，仍然报4214，请检查你的代理，代理问题请往下看。
 
-* 客户端版本区别方式：
+* #### Exception has been thrown by the target of aninvocation
+* 国际服客户端使用国服补丁会出现此错误，解决方法请看`4214`
+![Exception has been thrown by the target of aninvocation](https://github.com/Yuer-QAQ/Grasscutter-error/tree/main/Photo/4214-3.png)
 
 * ## 4206 错误
 此类错误大多数情况为代理未正确配置，可尝试
