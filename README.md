@@ -59,7 +59,7 @@
 ![国际服客户端使用国服补丁会出现此错误，解决方法为下载正确的补丁在进行文件替换,可借鉴"4214"。](https://github.com/Yuer-QAQ/Grasscutter-error/blob/main/Photo/4214-3.png)
 * 2.Failed to load il2cpp
 
-![Failed to load il2cpp](https://github.com/Yuer-QAQ/Grasscutter-error/blob/main/Photo/4214-4.png)
+* ![Failed to load il2cpp](https://github.com/Yuer-QAQ/Grasscutter-error/blob/main/Photo/4214-4.png)
 
 * 本人暂未碰到此错误，据群友所说的是使用其他版本的补丁造成此错误，解决方法为下载正确的补丁在进行文件替换，可借鉴`4214`.
 
