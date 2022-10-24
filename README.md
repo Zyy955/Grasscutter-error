@@ -58,8 +58,10 @@
 * 1：Exception has been thrown by the target of aninvocation
 ![国际服客户端使用国服补丁会出现此错误，解决方法为下载正确的补丁在进行文件替换,可借鉴"4214"。](https://github.com/Yuer-QAQ/Grasscutter-error/blob/main/Photo/4214-3.png)
 * 2.Failed to load il2cpp
-* 本人暂未碰到此错误，据群友所说的是使用其他版本的补丁造成此错误，解决方法为下载正确的补丁在进行文件替换，可借鉴`4214`.
+
 ![Failed to load il2cpp](https://github.com/Yuer-QAQ/Grasscutter-error/blob/main/Photo/4214-4.png)
+
+* 本人暂未碰到此错误，据群友所说的是使用其他版本的补丁造成此错误，解决方法为下载正确的补丁在进行文件替换，可借鉴`4214`.
 
 * ## 4206 错误
 * 此错误大概率发生在服务端，服务端没有正确配置`config.json`里面的公网/局域网IP导致。
