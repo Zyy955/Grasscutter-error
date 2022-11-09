@@ -1,4 +1,4 @@
-# Grasscutter-error
+﻿# Grasscutter-error
  Grasscutter错误代码
 * ## 4214-错误代码
 
@@ -111,4 +111,15 @@
 * ## 进门白屏
 * 啥也别说，换个账号解决一切问题。
 
-先摆了，明天再写，打王者去了。
+---
+
+* ## 服务端问题合集
+* ## 443端口占用
+![443](https://github.com/Lost-Season/Grasscutter-error/blob/main/Photo/443.jpg)
+1) 杀掉占用了`443`端口的进程
+> * 打开cmd
+> * netstat -aon|findstr 443
+> * taskkill -f -pid **** #进程PID （可能需要管理员权限）
+2) 修改`config.json`的端口
+> * 找到40行左右的`"bindPort": 443,`，将443换成其它没有被占用的端口
+
